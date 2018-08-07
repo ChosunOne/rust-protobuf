@@ -413,6 +413,7 @@ pub struct FieldGen<'a> {
     pub kind: FieldKind,
     pub expose_field: bool,
     pub generate_accessors: bool,
+    elide_default: bool
 }
 
 impl<'a> FieldGen<'a> {
@@ -472,6 +473,7 @@ impl<'a> FieldGen<'a> {
             kind: kind,
             expose_field: expose_field,
             generate_accessors: generate_accessors,
+            elide_default: false
         }
     }
 
@@ -1067,14 +1069,18 @@ impl<'a> FieldGen<'a> {
                         });
                     }
                     _ => {
-                        w.if_stmt(
-                            format!(
-                                "{} != {}",
-                                self.self_field(),
-                                self.full_storage_type().default_value()
-                            ),
-                            |w| { cb(&self.self_field(), &self.full_storage_type(), w); },
-                        );
+                        if self.elide_default {
+                            w.if_stmt(
+                                format!(
+                                    "{} != {}",
+                                    self.self_field(),
+                                    self.full_storage_type().default_value()
+                                ),
+                                |w| { cb(&self.self_field(), &self.full_storage_type(), w); },
+                            );
+                        } else {
+                                w.if_stmt("true", |w| { cb(&self.self_field(), &self.full_storage_type(), w); });
+                        }
                     }
                 }
             }
