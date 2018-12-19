@@ -2,7 +2,7 @@ extern crate tempdir;
 
 extern crate protoc;
 extern crate protobuf;
-extern crate protobuf_codegen;
+extern crate protobuf_codegen_no_elision;
 
 use std::io;
 use std::io::Read;
@@ -12,7 +12,7 @@ use std::path::Path;
 pub use protoc::Error;
 pub use protoc::Result;
 
-pub use protobuf_codegen::Customize;
+pub use protobuf_codegen_no_elision::Customize;
 
 
 #[derive(Debug, Default)]
@@ -78,7 +78,7 @@ pub fn run(args: Args) -> Result<()> {
         ));
     }
 
-    protobuf_codegen::gen_and_write(
+    protobuf_codegen_no_elision::gen_and_write(
         fds.get_file(),
         &files_to_generate,
         &Path::new(&args.out_dir),

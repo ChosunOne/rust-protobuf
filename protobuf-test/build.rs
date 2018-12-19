@@ -4,7 +4,7 @@ extern crate log;
 extern crate env_logger;
 
 extern crate protoc;
-extern crate protoc_rust;
+extern crate protoc_rust_no_elision;
 
 extern crate protobuf_test_common;
 

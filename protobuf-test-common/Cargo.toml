@@ -25,5 +25,5 @@ bytes = { version = "0.4", optional = true }
 [dependencies.protobuf]
 path = "../protobuf"
 
-[dependencies.protobuf-codegen]
+[dependencies.protobuf-codegen-no-elision]
 path = "../protobuf-codegen"

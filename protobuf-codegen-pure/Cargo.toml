@@ -17,7 +17,7 @@ bench = false
 
 [dependencies]
 protobuf = { path = "../protobuf", version = "=2.0.4" }
-protobuf-codegen = { path = "../protobuf-codegen", version = "=2.0.4" }
+protobuf-codegen-no-elision = { path = "../protobuf-codegen", version = "=2.0.4" }
 
 [[bin]]
 

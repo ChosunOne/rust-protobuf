@@ -1,7 +1,7 @@
 [package]
-name = "protobuf-codegen"
+name = "protobuf-codegen-no-elision"
 version = "2.0.4"
-authors = ["Stepan Koltsov <stepan.koltsov@gmail.com>"]
+authors = ["Stepan Koltsov <stepan.koltsov@gmail.com>, Josiah Evans <koreanhalo@gmail.com>"]
 license = "MIT/Apache-2.0"
 homepage = "https://github.com/stepancheg/rust-protobuf/"
 repository = "https://github.com/stepancheg/rust-protobuf/"
