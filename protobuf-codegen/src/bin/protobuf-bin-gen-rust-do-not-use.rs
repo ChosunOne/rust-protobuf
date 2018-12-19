@@ -1,5 +1,5 @@
 extern crate protobuf;
-extern crate protobuf_codegen;
+extern crate protobuf_codegen_no_elision;
 
 use std::fs::*;
 use std::io::Read;
@@ -7,7 +7,7 @@ use std::path::Path;
 
 use protobuf::parse_from_reader;
 use protobuf::descriptor::*;
-use protobuf_codegen::*;
+use protobuf_codegen_no_elision::*;
 
 
 fn write_file(bin: &str) {
