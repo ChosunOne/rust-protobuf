@@ -1,7 +1,7 @@
 [package]
-name = "protobuf-test"
+name = "protobuf-test-no-elision"
 version = "0.0.0"
-authors = ["Stepan Koltsov <stepan.koltsov@gmail.com>"]
+authors = ["Stepan Koltsov <stepan.koltsov@gmail.com>, Josiah Evans <koreanhalo@gmail.com>"]
 publish = false
 
 [lib]
@@ -15,7 +15,7 @@ with-bytes = ["bytes", "protobuf/with-bytes", "protobuf-test-common/with-bytes"]
 
 [build-dependencies]
 protoc      = { path = "../protoc" }
-protoc-rust = { path = "../protoc-rust" }
+protoc-rust-no-elision = { path = "../protoc-rust" }
 protobuf-test-common = { path = "../protobuf-test-common" }
 glob        = "0.2"
 log         = "0.*"
